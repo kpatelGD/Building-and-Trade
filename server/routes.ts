@@ -3,8 +3,6 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertInquirySchema } from "@shared/schema";
 import { ZodError } from "zod";
-import { sendInquiryEmail } from "./email";
-
 export async function registerRoutes(
   httpServer: Server,
   app: Express
@@ -13,12 +11,6 @@ export async function registerRoutes(
     try {
       const data = insertInquirySchema.parse(req.body);
       const inquiry = await storage.createInquiry(data);
-
-      // Send email notification — fire and forget, don't block the response
-      sendInquiryEmail(inquiry).catch((err) =>
-        console.error("Failed to send inquiry email:", err)
-      );
-
       res.status(201).json(inquiry);
     } catch (error) {
       if (error instanceof ZodError) {
