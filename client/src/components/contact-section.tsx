@@ -51,22 +51,6 @@ export function ContactSection() {
   const mutation = useMutation({
     mutationFn: async (data: InsertInquiry) => {
       await apiRequest("POST", "/api/inquiries", data);
-
-      await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          access_key: "4c5c0270-be98-43cc-a13b-fb3c3a070a0d",
-          subject: `New Quote Request – ${data.service}`,
-          from_name: "BTI Website",
-          name: data.name,
-          email: data.email,
-          phone: data.phone || "Not provided",
-          service: data.service,
-          message: data.message,
-          botcheck: "",
-        }),
-      });
     },
     onSuccess: () => {
       toast({
