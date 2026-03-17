@@ -6,7 +6,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function sendInquiryEmail(inquiry: Inquiry): Promise<void> {
   const { error } = await resend.emails.send({
     from: "BTI Contact Form <onboarding@resend.dev>",
-    to: "monarch32002@gmail.com",
+    to: "info@btichicago.com",
     subject: `New Quote Request – ${inquiry.service}`,
     html: `
       <h2>New Quote Request from BTI Website</h2>
