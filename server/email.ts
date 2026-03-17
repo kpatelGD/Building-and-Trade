@@ -3,7 +3,7 @@ import type { Inquiry } from "@shared/schema";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const RECIPIENT_EMAIL = "complexeipiga@live.fr";
+const RECIPIENT_EMAIL = "info@btichicago.com";
 const FROM_EMAIL = "BTI Contact Form <onboarding@resend.dev>";
 
 export async function sendInquiryEmail(inquiry: Inquiry): Promise<void> {
