@@ -33,7 +33,7 @@ import {
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 import { SiGmail } from "react-icons/si";
 
-const RECIPIENT = "monarch32002@gmail.com";
+const RECIPIENT = "info@btichicago.com";
 
 const serviceOptions = [
   "Basement Remodeling",
