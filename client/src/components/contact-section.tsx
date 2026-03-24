@@ -258,21 +258,38 @@ export function ContactSection() {
                   <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="text-sm font-medium text-foreground">Location</p>
-                    <p className="text-sm text-muted-foreground">Serving Illinois & Chicagoland Suburbs</p>
+                    <a
+                      href="https://maps.google.com/?q=Chicagoland,Illinois"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-muted-foreground hover:text-primary underline-offset-4 hover:underline"
+                    >
+                      Serving Illinois & Chicagoland Suburbs
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Phone className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="text-sm font-medium text-foreground">Phone</p>
-                    <p className="text-sm text-muted-foreground">(312) 555-0199</p>
+                    <a
+                      href="tel:+13125550199"
+                      className="text-sm text-muted-foreground hover:text-primary underline-offset-4 hover:underline"
+                    >
+                      (312) 555-0199
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Mail className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="text-sm font-medium text-foreground">Email</p>
-                    <p className="text-sm text-muted-foreground">info@btichicago.com</p>
+                    <a
+                      href="mailto:info@btichicago.com"
+                      className="text-sm text-muted-foreground hover:text-primary underline-offset-4 hover:underline"
+                    >
+                      info@btichicago.com
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -294,7 +311,12 @@ export function ContactSection() {
                 Have an urgent plumbing or electrical issue? We offer emergency
                 response for critical situations.
               </p>
-              <p className="text-xl font-bold text-primary-foreground">(312) 555-0199</p>
+              <a
+                href="tel:+13125550199"
+                className="text-xl font-bold text-primary-foreground hover:underline underline-offset-4"
+              >
+                (312) 555-0199
+              </a>
             </div>
           </div>
         </div>
