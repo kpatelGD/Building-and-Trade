@@ -51,11 +51,17 @@ export function ContactSection() {
   const mutation = useMutation({
     mutationFn: async (data: InsertInquiry) => {
       await apiRequest("POST", "/api/inquiries", data);
+
+      const subject = encodeURIComponent(`Quote Request – ${data.service}`);
+      const body = encodeURIComponent(
+        `Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone || "Not provided"}\nService: ${data.service}\n\nMessage:\n${data.message}`
+      );
+      window.location.href = `mailto:info@btichicago.com?subject=${subject}&body=${body}`;
     },
     onSuccess: () => {
       toast({
         title: "Quote Request Sent!",
-        description: "We'll get back to you within 24 hours. Thank you for choosing BTI!",
+        description: "Your email client has opened — just hit send to reach BTI directly.",
       });
       form.reset({
         name: "",
