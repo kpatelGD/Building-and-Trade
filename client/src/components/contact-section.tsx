@@ -31,7 +31,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
-import { SiGmail, SiMicrosoftoutlook } from "react-icons/si";
+import { SiGmail } from "react-icons/si";
 
 const RECIPIENT = "monarch32002@gmail.com";
 
@@ -324,7 +324,14 @@ export function ContactSection() {
               onClick={openOutlook}
               data-testid="button-open-outlook"
             >
-              <SiMicrosoftoutlook className="w-5 h-5 text-blue-600" />
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="24" height="24" rx="4" fill="#0078D4"/>
+                <path d="M13 6h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-7V6z" fill="#fff" fillOpacity=".3"/>
+                <path d="M20.5 8.5 13 12.5V18h7a.5.5 0 0 0 .5-.5v-9z" fill="#fff" fillOpacity=".2"/>
+                <path d="M13 12.5 20.5 8.5M13 6v12" stroke="#fff" strokeWidth="1" strokeOpacity=".6"/>
+                <rect x="3" y="7" width="11" height="10" rx="1.5" fill="#fff"/>
+                <ellipse cx="8.5" cy="12" rx="2.5" ry="3" fill="#0078D4"/>
+              </svg>
               Open in Outlook
             </Button>
             <Button
