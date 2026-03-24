@@ -56,7 +56,7 @@ export function ContactSection() {
       const body = encodeURIComponent(
         `Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone || "Not provided"}\nService: ${data.service}\n\nMessage:\n${data.message}`
       );
-      window.location.href = `mailto:info@btichicago.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:monarch32002@gmail.com?subject=${subject}&body=${body}`;
     },
     onSuccess: () => {
       toast({
