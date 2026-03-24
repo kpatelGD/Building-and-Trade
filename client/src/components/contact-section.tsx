@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
@@ -7,6 +8,13 @@ import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 import {
   Form,
   FormControl,
@@ -23,6 +31,9 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { SiGmail, SiMicrosoftoutlook } from "react-icons/si";
+
+const RECIPIENT = "monarch32002@gmail.com";
 
 const serviceOptions = [
   "Basement Remodeling",
@@ -35,8 +46,22 @@ const serviceOptions = [
   "Other",
 ];
 
+interface EmailLinks {
+  subject: string;
+  body: string;
+}
+
+function buildEmailLinks(data: InsertInquiry): EmailLinks {
+  const subject = `Quote Request – ${data.service}`;
+  const body = `Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone || "Not provided"}\nService: ${data.service}\n\nMessage:\n${data.message}`;
+  return { subject, body };
+}
+
 export function ContactSection() {
   const { toast } = useToast();
+  const [pickerOpen, setPickerOpen] = useState(false);
+  const [emailLinks, setEmailLinks] = useState<EmailLinks | null>(null);
+
   const form = useForm<InsertInquiry>({
     resolver: zodResolver(insertInquirySchema),
     defaultValues: {
@@ -51,25 +76,12 @@ export function ContactSection() {
   const mutation = useMutation({
     mutationFn: async (data: InsertInquiry) => {
       await apiRequest("POST", "/api/inquiries", data);
-
-      const subject = encodeURIComponent(`Quote Request – ${data.service}`);
-      const body = encodeURIComponent(
-        `Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone || "Not provided"}\nService: ${data.service}\n\nMessage:\n${data.message}`
-      );
-      window.location.href = `mailto:monarch32002@gmail.com?subject=${subject}&body=${body}`;
+      return data;
     },
-    onSuccess: () => {
-      toast({
-        title: "Quote Request Sent!",
-        description: "Your email client has opened — just hit send to reach BTI directly.",
-      });
-      form.reset({
-        name: "",
-        email: "",
-        phone: "",
-        service: "",
-        message: "",
-      });
+    onSuccess: (data) => {
+      setEmailLinks(buildEmailLinks(data));
+      setPickerOpen(true);
+      form.reset({ name: "", email: "", phone: "", service: "", message: "" });
     },
     onError: () => {
       toast({
@@ -79,6 +91,26 @@ export function ContactSection() {
       });
     },
   });
+
+  function openGmail() {
+    if (!emailLinks) return;
+    const url = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(RECIPIENT)}&su=${encodeURIComponent(emailLinks.subject)}&body=${encodeURIComponent(emailLinks.body)}`;
+    window.open(url, "_blank");
+    setPickerOpen(false);
+  }
+
+  function openOutlook() {
+    if (!emailLinks) return;
+    const url = `https://outlook.live.com/mail/0/deeplink/compose?to=${encodeURIComponent(RECIPIENT)}&subject=${encodeURIComponent(emailLinks.subject)}&body=${encodeURIComponent(emailLinks.body)}`;
+    window.open(url, "_blank");
+    setPickerOpen(false);
+  }
+
+  function openDefaultMail() {
+    if (!emailLinks) return;
+    window.location.href = `mailto:${RECIPIENT}?subject=${encodeURIComponent(emailLinks.subject)}&body=${encodeURIComponent(emailLinks.body)}`;
+    setPickerOpen(false);
+  }
 
   return (
     <section id="contact" className="py-20 sm:py-28 bg-background" data-testid="section-contact">
@@ -112,11 +144,7 @@ export function ContactSection() {
                       <FormItem>
                         <FormLabel>Full Name</FormLabel>
                         <FormControl>
-                          <Input
-                            placeholder="John Smith"
-                            {...field}
-                            data-testid="input-name"
-                          />
+                          <Input placeholder="John Smith" {...field} data-testid="input-name" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -129,12 +157,7 @@ export function ContactSection() {
                       <FormItem>
                         <FormLabel>Email Address</FormLabel>
                         <FormControl>
-                          <Input
-                            type="email"
-                            placeholder="john@example.com"
-                            {...field}
-                            data-testid="input-email"
-                          />
+                          <Input type="email" placeholder="john@example.com" {...field} data-testid="input-email" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -276,6 +299,46 @@ export function ContactSection() {
           </div>
         </div>
       </div>
+
+      <Dialog open={pickerOpen} onOpenChange={setPickerOpen}>
+        <DialogContent className="sm:max-w-md" data-testid="dialog-email-picker">
+          <DialogHeader>
+            <DialogTitle>Choose how to send your request</DialogTitle>
+            <DialogDescription>
+              Your quote request is ready. Select your email app to send it to BTI.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex flex-col gap-3 pt-2">
+            <Button
+              variant="outline"
+              className="w-full justify-start gap-3 h-12"
+              onClick={openGmail}
+              data-testid="button-open-gmail"
+            >
+              <SiGmail className="w-5 h-5 text-red-500" />
+              Open in Gmail
+            </Button>
+            <Button
+              variant="outline"
+              className="w-full justify-start gap-3 h-12"
+              onClick={openOutlook}
+              data-testid="button-open-outlook"
+            >
+              <SiMicrosoftoutlook className="w-5 h-5 text-blue-600" />
+              Open in Outlook
+            </Button>
+            <Button
+              variant="outline"
+              className="w-full justify-start gap-3 h-12"
+              onClick={openDefaultMail}
+              data-testid="button-open-default-mail"
+            >
+              <Mail className="w-5 h-5 text-muted-foreground" />
+              Use my default mail app
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }
