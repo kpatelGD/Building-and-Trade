@@ -47,7 +47,7 @@ export const projects = [
     title: "Modern Basement Entertainment Suite",
     description: "Complete basement transformation featuring a home theater, custom wet bar, and guest bedroom with egress window in Naperville.",
     service: "Basement Remodeling",
-    imageUrl: "/images/hero-basement.png",
+    imageUrl: "images/hero-basement.png",
     featured: true,
   },
   {
@@ -55,7 +55,7 @@ export const projects = [
     title: "Contemporary Kitchen Overhaul",
     description: "Full kitchen renovation with custom navy cabinets, quartz waterfall island, and designer pendant lighting in Schaumburg.",
     service: "Kitchen Renovation",
-    imageUrl: "/images/service-kitchen.png",
+    imageUrl: "images/service-kitchen.png",
     featured: true,
   },
   {
@@ -63,7 +63,7 @@ export const projects = [
     title: "Whole-Home Interior Painting",
     description: "Complete interior repaint with accent walls, trim refinishing, and cabinet painting for a 4-bedroom home in Evanston.",
     service: "Professional Painting",
-    imageUrl: "/images/service-painting.png",
+    imageUrl: "images/service-painting.png",
     featured: false,
   },
   {
@@ -71,7 +71,7 @@ export const projects = [
     title: "Luxury Master Bathroom",
     description: "Spa-inspired master bathroom with freestanding tub, frameless glass shower, marble tile, and heated floors in Aurora.",
     service: "Plumbing Services",
-    imageUrl: "/images/service-plumbing.png",
+    imageUrl: "images/service-plumbing.png",
     featured: true,
   },
   {
@@ -79,7 +79,7 @@ export const projects = [
     title: "Smart Lighting & Panel Upgrade",
     description: "200-amp panel upgrade with whole-home smart lighting integration, dimmer controls, and outdoor landscape lighting in Oak Park.",
     service: "Electrical Work",
-    imageUrl: "/images/service-electrical.png",
+    imageUrl: "images/service-electrical.png",
     featured: false,
   },
   {
@@ -87,7 +87,7 @@ export const projects = [
     title: "Home Theater Basement Conversion",
     description: "Unfinished basement converted to a dedicated home theater room with acoustic treatments, tiered seating, and 4K projection system.",
     service: "Basement Remodeling",
-    imageUrl: "/images/gallery-1.png",
+    imageUrl: "images/gallery-1.png",
     featured: true,
   },
   {
@@ -95,7 +95,7 @@ export const projects = [
     title: "Exterior Renovation & Curb Appeal",
     description: "Complete exterior makeover including new siding, window replacements, updated landscaping, and fresh paint for a suburban Chicago home.",
     service: "General Remodeling",
-    imageUrl: "/images/gallery-2.png",
+    imageUrl: "images/gallery-2.png",
     featured: false,
   },
   {
@@ -103,7 +103,7 @@ export const projects = [
     title: "Spa-Style Guest Bathroom",
     description: "Guest bathroom renovation featuring a freestanding tub, marble flooring, double vanity, and custom frameless mirror in Hinsdale.",
     service: "Bathroom Renovation",
-    imageUrl: "/images/gallery-3.png",
+    imageUrl: "images/gallery-3.png",
     featured: true,
   },
 ];

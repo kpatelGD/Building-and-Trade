@@ -8,10 +8,14 @@ export function HeroSection() {
   };
 
   return (
-    <section id="home" className="relative min-h-[90vh] flex items-center" data-testid="section-hero">
+    <section
+      id="home"
+      className="relative min-h-[90vh] flex items-center"
+      data-testid="section-hero"
+    >
       <div className="absolute inset-0">
         <img
-          src="/images/hero-basement.png"
+          src="images/hero-basement.png"
           alt="Beautiful basement remodel by BTI"
           className="w-full h-full object-cover"
         />
@@ -29,12 +33,15 @@ export function HeroSection() {
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight mb-6">
             Transform Your Home
-            <span className="block text-primary">Into Something Extraordinary</span>
+            <span className="block text-primary">
+              Into Something Extraordinary
+            </span>
           </h1>
 
           <p className="text-lg sm:text-xl text-white/80 leading-relaxed mb-8 max-w-xl">
-            From basement remodels to complete home renovations, Building and Trade Industry Inc. delivers
-            expert craftsmanship throughout Illinois and the Chicagoland suburbs.
+            From basement remodels to complete home renovations, Building and
+            Trade Industry Inc. delivers expert craftsmanship throughout
+            Illinois and the Chicagoland suburbs.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 mb-12">
@@ -60,15 +67,21 @@ export function HeroSection() {
           <div className="grid grid-cols-3 gap-4 sm:gap-6 max-w-md">
             <div className="text-center">
               <Shield className="w-6 h-6 text-primary mx-auto mb-1.5" />
-              <p className="text-xs sm:text-sm font-semibold text-white">Licensed & Insured</p>
+              <p className="text-xs sm:text-sm font-semibold text-white">
+                Licensed & Insured
+              </p>
             </div>
             <div className="text-center">
               <Clock className="w-6 h-6 text-primary mx-auto mb-1.5" />
-              <p className="text-xs sm:text-sm font-semibold text-white">On-Time Delivery</p>
+              <p className="text-xs sm:text-sm font-semibold text-white">
+                On-Time Delivery
+              </p>
             </div>
             <div className="text-center">
               <Award className="w-6 h-6 text-primary mx-auto mb-1.5" />
-              <p className="text-xs sm:text-sm font-semibold text-white">Quality Guaranteed</p>
+              <p className="text-xs sm:text-sm font-semibold text-white">
+                Quality Guaranteed
+              </p>
             </div>
           </div>
         </div>

@@ -7,35 +7,35 @@ const services = [
     title: "Basement Remodeling",
     description:
       "Transform your unfinished basement into a stunning living space. We handle everything from framing and drywall to flooring, lighting, and custom finishes.",
-    image: "/images/hero-basement.png",
+    image: "images/hero-basement.png",
     features: ["Custom Design", "Waterproofing", "Egress Windows", "Built-in Storage"],
   },
   {
     title: "Kitchen Renovation",
     description:
       "Create the kitchen of your dreams with custom cabinetry, premium countertops, modern appliances, and thoughtful layouts that maximize your space.",
-    image: "/images/service-kitchen.png",
+    image: "images/service-kitchen.png",
     features: ["Cabinet Installation", "Countertops", "Backsplash", "Lighting Design"],
   },
   {
     title: "Professional Painting",
     description:
       "Expert interior and exterior painting services. We use premium paints and meticulous prep work to deliver flawless, long-lasting finishes every time.",
-    image: "/images/service-painting.png",
+    image: "images/service-painting.png",
     features: ["Interior Painting", "Exterior Painting", "Staining", "Color Consultation"],
   },
   {
     title: "Plumbing Services",
     description:
       "Complete plumbing solutions from bathroom remodels to whole-house repiping. Our licensed plumbers ensure reliable, code-compliant installations.",
-    image: "/images/service-plumbing.png",
+    image: "images/service-plumbing.png",
     features: ["Bathroom Remodel", "Fixture Install", "Pipe Repair", "Water Heaters"],
   },
   {
     title: "Electrical Work",
     description:
       "Modern electrical upgrades including panel replacements, LED lighting installations, smart home wiring, and complete electrical system overhauls.",
-    image: "/images/service-electrical.png",
+    image: "images/service-electrical.png",
     features: ["Panel Upgrades", "LED Lighting", "Smart Home", "Code Updates"],
   },
 ];
