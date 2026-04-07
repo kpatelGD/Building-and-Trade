@@ -19,7 +19,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <Router base="/Building-and-Trade">
+        <Router base="/">
           <Toaster />
           <AppRoutes />
         </Router>
