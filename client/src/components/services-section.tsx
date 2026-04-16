@@ -8,6 +8,7 @@ const services = [
     description:
       "Transform your unfinished basement into a stunning living space. We handle everything from framing and drywall to flooring, lighting, and custom finishes.",
     image: "images/hero-basement.png",
+    alt: "Finished basement with home theater and custom bar remodeled by BTI in Chicagoland",
     features: ["Custom Design", "Waterproofing", "Egress Windows", "Built-in Storage"],
   },
   {
@@ -15,6 +16,7 @@ const services = [
     description:
       "Create the kitchen of your dreams with custom cabinetry, premium countertops, modern appliances, and thoughtful layouts that maximize your space.",
     image: "images/service-kitchen.png",
+    alt: "Modern kitchen renovation with custom cabinets and quartz countertops by BTI",
     features: ["Cabinet Installation", "Countertops", "Backsplash", "Lighting Design"],
   },
   {
@@ -22,6 +24,7 @@ const services = [
     description:
       "Expert interior and exterior painting services. We use premium paints and meticulous prep work to deliver flawless, long-lasting finishes every time.",
     image: "images/service-painting.png",
+    alt: "Freshly painted interior room with clean edges and premium finish by BTI painters",
     features: ["Interior Painting", "Exterior Painting", "Staining", "Color Consultation"],
   },
   {
@@ -29,6 +32,7 @@ const services = [
     description:
       "Complete plumbing solutions from bathroom remodels to whole-house repiping. Our licensed plumbers ensure reliable, code-compliant installations.",
     image: "images/service-plumbing.png",
+    alt: "Spa-style bathroom remodel with freestanding tub and frameless glass shower by BTI",
     features: ["Bathroom Remodel", "Fixture Install", "Pipe Repair", "Water Heaters"],
   },
   {
@@ -36,6 +40,7 @@ const services = [
     description:
       "Modern electrical upgrades including panel replacements, LED lighting installations, smart home wiring, and complete electrical system overhauls.",
     image: "images/service-electrical.png",
+    alt: "Smart home electrical panel upgrade and LED lighting installation by BTI electricians",
     features: ["Panel Upgrades", "LED Lighting", "Smart Home", "Code Updates"],
   },
 ];
@@ -72,7 +77,7 @@ export function ServicesSection() {
               <div className="aspect-[4/3] overflow-hidden rounded-t-md">
                 <img
                   src={service.image}
-                  alt={service.title}
+                  alt={service.alt}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
