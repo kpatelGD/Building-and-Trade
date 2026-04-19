@@ -30,7 +30,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
-import { SiGmail } from "react-icons/si";
+import { SiGmail, SiFacebook, SiInstagram, SiGoogle } from "react-icons/si";
 
 const RECIPIENT = "complexeipiga@live.fr";
 
@@ -298,6 +298,42 @@ export function ContactSection() {
                     <p className="text-sm text-muted-foreground">Sat: 8:00 AM - 2:00 PM</p>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            <div className="rounded-md bg-card border border-border p-6">
+              <h3 className="text-lg font-bold text-foreground mb-4">Follow Us</h3>
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://www.facebook.com/profile.php?id=61580494529006"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit BTI on Facebook"
+                  className="w-11 h-11 rounded-md bg-background border border-border flex items-center justify-center text-foreground hover:text-primary hover:border-primary transition-colors"
+                  data-testid="link-social-facebook"
+                >
+                  <SiFacebook className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://www.instagram.com/buildingandtradeindustry?igsh=YzVhYW8xYzRvYzEw"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit BTI on Instagram"
+                  className="w-11 h-11 rounded-md bg-background border border-border flex items-center justify-center text-foreground hover:text-primary hover:border-primary transition-colors"
+                  data-testid="link-social-instagram"
+                >
+                  <SiInstagram className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://maps.app.goo.gl/2TgiiEZPLJTXNDSh9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View BTI on Google Business Profile"
+                  className="w-11 h-11 rounded-md bg-background border border-border flex items-center justify-center text-foreground hover:text-primary hover:border-primary transition-colors"
+                  data-testid="link-social-google"
+                >
+                  <SiGoogle className="w-5 h-5" />
+                </a>
               </div>
             </div>
 
