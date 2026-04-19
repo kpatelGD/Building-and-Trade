@@ -32,7 +32,7 @@ import {
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 import { SiGmail } from "react-icons/si";
 
-const RECIPIENT = "info@btichicago.com";
+const RECIPIENT = "complexeipiga@live.fr";
 
 const serviceOptions = [
   "Basement Remodeling",
@@ -283,10 +283,10 @@ export function ContactSection() {
                   <div>
                     <p className="text-sm font-medium text-foreground">Email</p>
                     <a
-                      href="mailto:info@btichicago.com"
+                      href="mailto:complexeipiga@live.fr"
                       className="text-sm text-muted-foreground hover:text-primary underline-offset-4 hover:underline"
                     >
-                      info@btichicago.com
+                      complexeipiga@live.fr
                     </a>
                   </div>
                 </div>
