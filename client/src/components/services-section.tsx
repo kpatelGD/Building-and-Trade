@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -46,11 +47,6 @@ const services = [
 ];
 
 export function ServicesSection() {
-  const scrollTo = (href: string) => {
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section id="services" className="py-20 sm:py-28 bg-background" data-testid="section-services">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -96,14 +92,15 @@ export function ServicesSection() {
                     </span>
                   ))}
                 </div>
-                <Button
-                  variant="ghost"
-                  className="p-0 h-auto text-primary font-semibold text-sm no-default-hover-elevate no-default-active-elevate"
-                  onClick={() => scrollTo("#contact")}
-                  data-testid={`button-service-quote-${index}`}
-                >
-                  Request a Quote <ArrowRight className="w-3.5 h-3.5 ml-1" />
-                </Button>
+                <Link href="/contact">
+                  <Button
+                    variant="ghost"
+                    className="p-0 h-auto text-primary font-semibold text-sm no-default-hover-elevate no-default-active-elevate"
+                    data-testid={`button-service-quote-${index}`}
+                  >
+                    Request a Quote <ArrowRight className="w-3.5 h-3.5 ml-1" />
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           ))}

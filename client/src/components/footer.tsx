@@ -1,4 +1,4 @@
-import { Hammer } from "lucide-react";
+import { Building2 } from "lucide-react";
 
 const footerLinks = {
   services: [
@@ -26,12 +26,11 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <div className="w-9 h-9 rounded-md bg-primary flex items-center justify-center">
-                <Hammer className="w-5 h-5 text-primary-foreground" />
+                <Building2 className="w-5 h-5 text-primary-foreground" />
               </div>
-              <div>
-                <p className="text-sm font-bold leading-tight">Building & Trade</p>
-                <p className="text-[10px] text-background/60 leading-tight">Industry Inc.</p>
-              </div>
+              <p className="text-sm font-bold leading-tight">
+                Building and Trade Industries
+              </p>
             </div>
             <p className="text-sm text-background/60 leading-relaxed">
               Transforming homes across Illinois and the Chicagoland suburbs with expert
@@ -75,7 +74,7 @@ export function Footer() {
 
         <div className="border-t border-background/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-background/50">
-            &copy; {new Date().getFullYear()} Building and Trade Industry Inc. All rights reserved.
+            &copy; {new Date().getFullYear()} Building and Trade Industries. All rights reserved.
           </p>
           <p className="text-xs text-background/50">
             Licensed & Insured in the State of Illinois

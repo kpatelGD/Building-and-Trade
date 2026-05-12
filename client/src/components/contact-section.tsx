@@ -32,7 +32,7 @@ import {
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 import { SiGmail, SiFacebook, SiInstagram, SiGoogle } from "react-icons/si";
 
-const RECIPIENT = "complexeipiga@live.fr";
+const RECIPIENT = "info@buildingandtradeindustry.com";
 
 const serviceOptions = [
   "Basement Remodeling",
@@ -271,10 +271,10 @@ export function ContactSection() {
                   <div>
                     <p className="text-sm font-medium text-foreground">Phone</p>
                     <a
-                      href="tel:+13125550199"
+                      href="tel:+16303635543"
                       className="text-sm text-muted-foreground hover:text-primary underline-offset-4 hover:underline"
                     >
-                      (312) 555-0199
+                      (630) 363-5543
                     </a>
                   </div>
                 </div>
@@ -283,10 +283,10 @@ export function ContactSection() {
                   <div>
                     <p className="text-sm font-medium text-foreground">Email</p>
                     <a
-                      href="mailto:complexeipiga@live.fr"
+                      href="mailto:info@buildingandtradeindustry.com"
                       className="text-sm text-muted-foreground hover:text-primary underline-offset-4 hover:underline"
                     >
-                      complexeipiga@live.fr
+                      info@buildingandtradeindustry.com
                     </a>
                   </div>
                 </div>
@@ -294,8 +294,8 @@ export function ContactSection() {
                   <Clock className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="text-sm font-medium text-foreground">Business Hours</p>
-                    <p className="text-sm text-muted-foreground">Mon - Fri: 7:00 AM - 6:00 PM</p>
-                    <p className="text-sm text-muted-foreground">Sat: 8:00 AM - 2:00 PM</p>
+                    <p className="text-sm text-muted-foreground">Mon - Fri: 8:30 AM - 6:00 PM</p>
+                    <p className="text-sm text-muted-foreground">Sat: 8:30 AM - 2:00 PM</p>
                   </div>
                 </div>
               </div>
@@ -346,10 +346,10 @@ export function ContactSection() {
                 response for critical situations.
               </p>
               <a
-                href="tel:+13125550199"
+                href="tel:+16303635543"
                 className="text-xl font-bold text-primary-foreground hover:underline underline-offset-4"
               >
-                (312) 555-0199
+                (630) 363-5543
               </a>
             </div>
           </div>

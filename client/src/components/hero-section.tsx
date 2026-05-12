@@ -1,12 +1,8 @@
+import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Clock, Award } from "lucide-react";
 
 export function HeroSection() {
-  const scrollTo = (href: string) => {
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section
       id="home"
@@ -45,23 +41,22 @@ export function HeroSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 mb-12">
-            <Button
-              size="lg"
-              onClick={() => scrollTo("#contact")}
-              data-testid="button-hero-quote"
-            >
-              Get Your Free Estimate
-              <ArrowRight className="w-4 h-4 ml-1" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="bg-white/10 backdrop-blur-sm border-white/20 text-white"
-              onClick={() => scrollTo("#services")}
-              data-testid="button-hero-services"
-            >
-              View Our Services
-            </Button>
+            <Link href="/contact">
+              <Button size="lg" data-testid="button-hero-quote">
+                Get Your Free Estimate
+                <ArrowRight className="w-4 h-4 ml-1" />
+              </Button>
+            </Link>
+            <Link href="/services">
+              <Button
+                size="lg"
+                variant="outline"
+                className="bg-white/10 backdrop-blur-sm border-white/20 text-white"
+                data-testid="button-hero-services"
+              >
+                View Our Services
+              </Button>
+            </Link>
           </div>
 
           <div className="grid grid-cols-3 gap-4 sm:gap-6 max-w-md">
