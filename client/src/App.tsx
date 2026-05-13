@@ -11,7 +11,7 @@ import Gallery from "@/pages/gallery";
 import Testimonials from "@/pages/testimonials";
 import Contact from "@/pages/contact";
 
-const routerBase = import.meta.env.PROD ? "/Building-and-Trade" : "";
+const routerBase = "";
 
 function AppRoutes() {
   return (
