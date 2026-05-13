@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Building2 } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import logoUrl from "@assets/IMG_5286_1778552955962.png";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -12,28 +13,17 @@ const navLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
+const GOLD = "#E8A93C";
+const NAVY = "#0D2747";
+
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const [location] = useLocation();
-
-  const isHome = location === "/";
-  const transparentTop = isHome && !scrolled;
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        transparentTop
-          ? "bg-transparent"
-          : "bg-background/95 backdrop-blur-md border-b border-border"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 border-b"
+      style={{ backgroundColor: GOLD, borderColor: "rgba(13,39,71,0.15)" }}
       data-testid="navbar"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,16 +31,18 @@ export function Navbar() {
           <Link
             href="/"
             onClick={() => setIsOpen(false)}
-            className="flex items-center gap-2 flex-shrink-0"
+            className="flex items-center gap-2 sm:gap-3 flex-shrink-0"
             data-testid="link-logo"
           >
-            <div className="w-9 h-9 rounded-md bg-primary flex items-center justify-center">
-              <Building2 className="w-5 h-5 text-primary-foreground" />
-            </div>
+            <img
+              src={logoUrl}
+              alt="Building and Trade Industries logo"
+              className="w-9 h-9 sm:w-11 sm:h-11 rounded-md object-cover"
+              data-testid="img-nav-logo"
+            />
             <span
-              className={`text-base sm:text-lg font-extrabold leading-tight tracking-tight ${
-                transparentTop ? "text-white" : "text-foreground"
-              }`}
+              className="text-base sm:text-lg font-extrabold leading-tight tracking-tight"
+              style={{ color: NAVY }}
             >
               Building and Trade Industries
             </span>
@@ -64,15 +56,10 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
-                    transparentTop
-                      ? active
-                        ? "text-white"
-                        : "text-white/80 hover:text-white"
-                      : active
-                        ? "text-primary"
-                        : "text-foreground/70 hover:text-foreground"
+                  className={`px-3 py-2 text-sm font-semibold rounded-md transition-opacity ${
+                    active ? "opacity-100 underline underline-offset-4" : "opacity-80 hover:opacity-100"
                   }`}
+                  style={{ color: NAVY }}
                   data-testid={`link-nav-${link.label.toLowerCase()}`}
                 >
                   {link.label}
@@ -83,14 +70,21 @@ export function Navbar() {
 
           <div className="hidden lg:block">
             <Link href="/contact">
-              <Button data-testid="button-get-quote-nav">Get a Free Quote</Button>
+              <Button
+                style={{ backgroundColor: NAVY, color: "white" }}
+                className="hover:opacity-90"
+                data-testid="button-get-quote-nav"
+              >
+                Get a Free Quote
+              </Button>
             </Link>
           </div>
 
           <Button
             size="icon"
             variant="ghost"
-            className={`lg:hidden ${transparentTop ? "text-white hover:text-white" : ""}`}
+            className="lg:hidden hover:bg-black/10"
+            style={{ color: NAVY }}
             onClick={() => setIsOpen(!isOpen)}
             data-testid="button-mobile-menu"
           >
@@ -100,14 +94,15 @@ export function Navbar() {
       </div>
 
       {isOpen && (
-        <div className="lg:hidden bg-background border-b border-border">
+        <div className="lg:hidden border-t" style={{ backgroundColor: GOLD, borderColor: "rgba(13,39,71,0.15)" }}>
           <div className="px-4 py-3 space-y-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="block w-full text-left px-3 py-2.5 text-sm font-medium text-foreground/70 hover:text-foreground rounded-md"
+                className="block w-full text-left px-3 py-2.5 text-sm font-semibold rounded-md hover:bg-black/10"
+                style={{ color: NAVY }}
                 data-testid={`link-mobile-${link.label.toLowerCase()}`}
               >
                 {link.label}
@@ -115,7 +110,11 @@ export function Navbar() {
             ))}
             <div className="pt-2">
               <Link href="/contact" onClick={() => setIsOpen(false)}>
-                <Button className="w-full" data-testid="button-get-quote-mobile">
+                <Button
+                  className="w-full hover:opacity-90"
+                  style={{ backgroundColor: NAVY, color: "white" }}
+                  data-testid="button-get-quote-mobile"
+                >
                   Get a Free Quote
                 </Button>
               </Link>

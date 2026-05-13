@@ -1,6 +1,5 @@
 import { PageLayout } from "@/components/page-layout";
 import { HeroSection } from "@/components/hero-section";
-import { BrandBanner } from "@/components/brand-banner";
 
 export default function Home() {
   return (
@@ -10,7 +9,6 @@ export default function Home() {
       topPadded={false}
     >
       <HeroSection />
-      <BrandBanner />
     </PageLayout>
   );
 }
