@@ -29,7 +29,7 @@ export function Footer() {
                 <Building2 className="w-5 h-5 text-primary-foreground" />
               </div>
               <p className="text-sm font-bold leading-tight">
-                Building and Trade Industries
+                Building and Trade Industry Inc.
               </p>
             </div>
             <p className="text-sm text-background/60 leading-relaxed">
@@ -74,7 +74,7 @@ export function Footer() {
 
         <div className="border-t border-background/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-background/50">
-            &copy; {new Date().getFullYear()} Building and Trade Industries. All rights reserved.
+            &copy; {new Date().getFullYear()} Building and Trade Industry Inc. All rights reserved.
           </p>
           <p className="text-xs text-background/50">
             Licensed & Insured in the State of Illinois
